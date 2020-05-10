@@ -2055,7 +2055,6 @@ sub make_one_month_calendar {
   }
   my $this_month = $when->m;
   while ($when->m == $this_month) {
-    if ($when->day_of_week==1) {push @cal,$line; $line = ''}
     my $display = sprintf('%2d',$when->d);
     if ($when->compare($today)==0 && $mark_today) {
       if ($args{WANT_STYLING} && $args{TODAY_STYLE} ne '') {
@@ -2067,6 +2066,9 @@ sub make_one_month_calendar {
     }
     $line = "$line$display ";
     $when->increment_day_in_place();
+    # The first day of a second and the subsequent weeks in this month
+    # will be printed on the next line in the calendar
+    if ($when->day_of_week==1) {push @cal,$line; $line = ''}
   }
   if ($line ne '') {push @cal,$line; $line = ''}
 
