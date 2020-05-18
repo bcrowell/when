@@ -360,7 +360,7 @@ and next month.
 You can combine these commands. For instance, ``when cw'' will print
 out calendars, and then show you your items for the next week.
 
-For events that occur once a year, such as birthdays and annivesaries,
+For events that occur once a year, such as birthdays and anniversaries,
 you can either use a * in place of the year,
 
         * dec 25 , Christmas
